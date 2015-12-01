@@ -1,4 +1,10 @@
 
+Framework 
+  libxml2.tbd
+  libresolv.tbd
+header search paths
+  /usr/include/libxml2
+
 
 有人加入房间的通知
 <presence xmlns="jabber:client" from="128@muc.gzserver-pc/g0000000101" to="g0000000102@gzserver-pc/iphone"><x xmlns="http://jabber.org/protocol/muc#user"><item affiliation="none" role="participant" nick="g0000000101" jid="g0000000101@gzserver-pc/iphone"/></x></presence>
