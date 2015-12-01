@@ -549,6 +549,8 @@
 		CF12BE7F1C0C251E0084DD0E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF2DAB241C0AE96E0047E124 /* Regist */,
+				CF2DAB231C0AE9650047E124 /* Login */,
 				CF12BE801C0C255B0084DD0E /* ChatViewCell.h */,
 				CF12BE811C0C255B0084DD0E /* ChatViewCell.m */,
 				CF12BE821C0C255B0084DD0E /* ChatViewCell.xib */,
@@ -1566,6 +1568,16 @@
 			name = User;
 			sourceTree = "<group>";
 		};
+		CF4C38271C0D3E5C00CB378D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF2DAD451C0AFA0D0047E124 /* User */,
+				CFB6737D1C085030002451B7 /* Friends */,
+				CF2DAB151C0AD1380047E124 /* Groups */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		CFB673551C084DE0002451B7 = {
 			isa = PBXGroup;
 			children = (
@@ -1589,16 +1601,12 @@
 		CFB673601C084DE0002451B7 /* XmppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CF4C38271C0D3E5C00CB378D /* Controllers */,
 				CF12BE8D1C0C4B540084DD0E /* Model */,
 				CF12BE7F1C0C251E0084DD0E /* Views */,
-				CF2DAD451C0AFA0D0047E124 /* User */,
 				CF2DAD3B1C0AF1D50047E124 /* UserInfo */,
 				CF2DAD371C0AEDDB0047E124 /* XMPPTool */,
 				CF2DAB2F1C0AEC560047E124 /* Utilities */,
-				CF2DAB241C0AE96E0047E124 /* Regist */,
-				CF2DAB231C0AE9650047E124 /* Login */,
-				CF2DAB151C0AD1380047E124 /* Groups */,
-				CFB6737D1C085030002451B7 /* Friends */,
 				CFB6737B1C084FC3002451B7 /* AppDelegate */,
 				CFB673721C084DE0002451B7 /* Info.plist */,
 				CFB673611C084DE0002451B7 /* Supporting Files */,
