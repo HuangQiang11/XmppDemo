@@ -32,7 +32,9 @@
                 break;
             case XMPPResultTypeRegisterSuccess:
                 DLog(@"注册成功");
-               [[NSNotificationCenter defaultCenter] postNotificationName:MoveView object:nil];
+//               [[NSNotificationCenter defaultCenter] postNotificationName:MoveView object:nil];
+                [SVProgressHUD showSuccessWithStatus:@"注册成功，请重新登录"];
+                [self removeFromSuperview];
                 break;
                 
             case XMPPResultTypeRegisterFailure:

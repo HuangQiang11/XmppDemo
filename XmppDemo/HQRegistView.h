@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HQXMPPManager.h"
 #import "DLog.h"
-
+#import "SVProgressHUD.h"
 #define MoveView @"moveView"
 @interface HQRegistView : UIView
 @property (strong, nonatomic) IBOutlet UITextField *userNameTextField;
