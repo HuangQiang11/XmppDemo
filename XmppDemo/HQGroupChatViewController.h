@@ -14,7 +14,9 @@
 #import "ChatViewCell.h"
 #import "ChatViewForOtherCell.h"
 
-@interface HQGroupChatViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
+@interface HQGroupChatViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,NSFetchedResultsControllerDelegate>{
+    NSFetchedResultsController *_resultsContr;
+}
 @property (weak, nonatomic) IBOutlet UITableView *chatMessageTableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;

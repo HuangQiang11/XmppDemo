@@ -106,6 +106,8 @@ static HQXMPPManager * manager;
     _msgStorage = [[XMPPMessageArchivingCoreDataStorage alloc] init];
     _msgArchiving = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:_msgStorage];
     [_msgArchiving activate:_xmppStream];
+    [_msgArchiving setClientSideMessageArchivingOnly:YES];
+    
     
     _xmppStream.enableBackgroundingOnSocket = YES;
     // 设置代理
@@ -210,13 +212,13 @@ static HQXMPPManager * manager;
 -(void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
     
     DLog(@"++++++++++xmppstream didreceivemessage+++++++++++++++++%@",message);
-    if([message isMessageWithBody]){
-        if ([message.type isEqual:@"groupchat"]) {
-            if ([HQXMPPUserInfo shareXMPPUserInfo].joinRoomName != nil && ![[HQXMPPUserInfo shareXMPPUserInfo].joinRoomName isEqual:@""] &&[ [message fromStr] hasPrefix:[HQXMPPUserInfo shareXMPPUserInfo].joinRoomName]) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:ReceiveGroupChatMessage object:message];
-            }
-        }
-    }
+//    if([message isMessageWithBody]){
+//        if ([message.type isEqual:@"groupchat"]) {
+//            if ([HQXMPPUserInfo shareXMPPUserInfo].joinRoomName != nil && ![[HQXMPPUserInfo shareXMPPUserInfo].joinRoomName isEqual:@""] &&[ [message fromStr] hasPrefix:[HQXMPPUserInfo shareXMPPUserInfo].joinRoomName]) {
+//                [[NSNotificationCenter defaultCenter] postNotificationName:ReceiveGroupChatMessage object:message];
+//            }
+//        }
+//    }
 }
 
 //send message Fail

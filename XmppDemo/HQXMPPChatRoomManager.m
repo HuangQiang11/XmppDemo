@@ -33,7 +33,7 @@ static HQXMPPChatRoomManager * manager;
     NSXMLElement *p;
     p = [NSXMLElement elementWithName:@"field" ];
     [p addAttributeWithName:@"var" stringValue:@"muc#roomconfig_persistentroom"];//永久房间
-    [p addChild:[NSXMLElement elementWithName:@"value" stringValue:@"0"]];
+    [p addChild:[NSXMLElement elementWithName:@"value" stringValue:@"1"]];
     [x addChild:p];
     
     p = [NSXMLElement elementWithName:@"field" ];
@@ -58,7 +58,7 @@ static HQXMPPChatRoomManager * manager;
     
     p = [NSXMLElement elementWithName:@"field"];
     [p addAttributeWithName:@"var" stringValue:@"muc#maxhistoryfetch"];
-    [p addChild:[NSXMLElement elementWithName:@"value" stringValue:@"100"]]; //history
+    [p addChild:[NSXMLElement elementWithName:@"value" stringValue:@"0"]]; //history
     [x addChild:p];
     
     /*
