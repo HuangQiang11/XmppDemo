@@ -22,6 +22,7 @@ static HQXMPPManager * manager;
 #pragma mark common method
 - (void)xmppUserLoginWithResult:(XMPPResultBlock)resultBlock{
     _resultBlock = resultBlock;
+    self.registerOperation = NO;
     [_xmppStream disconnect];
     [self connectToHost];
 }
@@ -36,6 +37,7 @@ static HQXMPPManager * manager;
 
 - (void)xmppUserRegisterWithResutl:(XMPPResultBlock)resultBlock{
     _resultBlock = resultBlock;
+    self.registerOperation = YES;
     [_xmppStream disconnect];
     [self connectToHost];                                                           // 连接主机 成功后发送注册密码
 }

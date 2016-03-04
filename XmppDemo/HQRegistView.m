@@ -14,9 +14,8 @@
     if (self.userNameTextField.text != nil && self.passwordTextField.text != nil && ![self.userNameTextField.text isEqual:@""] && ![self.passwordTextField.text isEqual:@""]) {
         [HQXMPPUserInfo shareXMPPUserInfo].registerUser = self.userNameTextField.text;
         [HQXMPPUserInfo shareXMPPUserInfo].registerPwd = self.passwordTextField.text;
-        [HQXMPPManager shareXMPPManager].registerOperation = YES;
         __weak HQRegistView * weakSelf = self;
-        [[HQXMPPManager shareXMPPManager] xmppUserLoginWithResult:^(XMPPResultType type) {
+        [[HQXMPPManager shareXMPPManager] xmppUserRegisterWithResutl:^(XMPPResultType type) {
             [weakSelf handleResultType:type];
         }];
     }
@@ -31,8 +30,6 @@
                 DLog(@"网络不稳定");
                 break;
             case XMPPResultTypeRegisterSuccess:
-                DLog(@"注册成功");
-//               [[NSNotificationCenter defaultCenter] postNotificationName:MoveView object:nil];
                 [SVProgressHUD showSuccessWithStatus:@"注册成功，请重新登录"];
                 [self removeFromSuperview];
                 break;

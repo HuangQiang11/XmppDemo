@@ -9,7 +9,7 @@
 #ifndef config_h
 #define config_h
 
-#define kDOMAIN @"gzserver-pc"      //域名
+#define kDOMAIN @"im.tx-tech.com"      //域名
 #define kHOSTNAME @"192.168.3.88"   //服务器名
 #define IPHONE_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define IPHONE_WIDTH [UIScreen mainScreen].bounds.size.width
