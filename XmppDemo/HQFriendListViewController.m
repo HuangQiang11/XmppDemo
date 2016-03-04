@@ -7,7 +7,7 @@
 //
 
 #import "HQFriendListViewController.h"
-
+#import "XMPPvCardTemp.h"
 @interface HQFriendListViewController (){
     XMPPUserCoreDataStorageObject * userInfromation;
 }
@@ -71,10 +71,15 @@
     static NSString * identify = @"friendCell";
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identify];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identify];
     }
     XMPPUserCoreDataStorageObject * user = self.storageTool.fetchedResultsController.fetchedObjects[indexPath.row];
     cell.textLabel.text = user.jidStr;
+    
+     XMPPvCardTemp *friendvCard =[[HQXMPPManager shareXMPPManager].vCard vCardTempForJID:user.jid shouldFetch:YES];
+     cell.detailTextLabel.text = friendvCard.nickname;
+     cell.imageView.image = [[UIImage alloc]initWithData:friendvCard.photo];
+    /*
     cell.accessoryView = nil;
     UILabel * statueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
     cell.accessoryView = statueLabel;
@@ -91,6 +96,7 @@
         default:
             break;
     }
+     */
     return cell;
 }
 

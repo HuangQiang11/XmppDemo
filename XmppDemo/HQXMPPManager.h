@@ -31,6 +31,8 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);
     XMPPReconnect *_reconnect;                             // 自动连接模块
     
     XMPPMessageArchiving *_msgArchiving;                   // 消息归档模块
+    
+    XMPPvCardCoreDataStorage *_vCardStorage;//电子名片的数据存储
 }
 
 @property (nonatomic, strong,readonly)XMPPStream *xmppStream;
@@ -38,6 +40,9 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);
 @property (nonatomic, strong,readonly)XMPPRoster *roster;                                  //花名册模块
 @property (nonatomic, strong,readonly)XMPPRosterCoreDataStorage *rosterStorage;            //花名册储存模块
 @property (nonatomic, assign,getter=isRegisterOperation) BOOL  registerOperation;          //注册操作
+@property (nonatomic, strong,readonly)XMPPvCardTempModule *vCard;//电子名片
+@property (nonatomic, strong,readonly)XMPPvCardAvatarModule * avatar;//头像模块
+
 +(HQXMPPManager *)shareXMPPManager;
 - (void)xmppUserlogoutWithResult:(XMPPResultBlock)resultBlock;
 - (void)xmppUserLoginWithResult:(XMPPResultBlock)resultBlock;            //user login

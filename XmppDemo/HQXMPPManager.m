@@ -110,6 +110,18 @@ static HQXMPPManager * manager;
     [_msgArchiving activate:_xmppStream];
     [_msgArchiving setClientSideMessageArchivingOnly:YES];
     
+    //添加电子名片模块
+    _vCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
+    _vCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:_vCardStorage];
+    [_vCard addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+    //激活
+    [_vCard activate:_xmppStream];
+    
+    //添加头像模块
+    _avatar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:_vCard];
+    [_avatar activate:_xmppStream];
+    [_avatar addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+    
     
     _xmppStream.enableBackgroundingOnSocket = YES;
     // 设置代理
@@ -124,6 +136,9 @@ static HQXMPPManager * manager;
     [_reconnect deactivate];
     [_roster deactivate];
     [_msgArchiving deactivate];
+    [_vCard deactivate];
+    [_avatar deactivate];
+    
     // 断开连接
     [_xmppStream disconnect];
     // 清空资源
@@ -133,6 +148,9 @@ static HQXMPPManager * manager;
     _msgArchiving = nil;
     _msgStorage = nil;
     _xmppStream = nil;
+    _vCard = nil;
+    _vCardStorage = nil;
+    _avatar = nil;
     
 }
 
