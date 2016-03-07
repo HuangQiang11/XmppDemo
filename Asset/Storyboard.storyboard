@@ -601,9 +601,6 @@
                                 <rect key="frame" x="32" y="154" width="537" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="hcg-L8-bqU" id="Zrq-or-Kkt"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMn-p7-igL">
                                 <rect key="frame" x="32" y="230" width="537" height="30"/>

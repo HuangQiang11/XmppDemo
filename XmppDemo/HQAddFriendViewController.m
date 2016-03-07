@@ -18,28 +18,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Add Friends";
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
-}
-
-#pragma mark UITextFieldDelegate
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    if (textField.text == nil || [textField.text isEqualToString:@""]) {
-        self.sureButton.enabled = NO;
-    }else{
-        self.sureButton.enabled = YES;
-    }
-    return YES;
+    [self.inputTextField addTarget:self action:@selector(inputViewValueChange:) forControlEvents:UIControlEventEditingChanged];
 }
 
 #pragma mark button click
 - (IBAction)sureButtonAction:(id)sender {
+    NSLog(@"sure");
     if (self.inputTextField.text != nil && ![self.inputTextField.text isEqual:@""]) {
         //add friend and friend will receive message in didReceivePresenceSubscriptionRequest(XMPPRosterDelegate) method
         [self addFriendWithFriendName:self.inputTextField.text];
     }
+}
+
+- (void)inputViewValueChange:(UITextField *)textField{
+    if ([textField.text isEqual:@""]) {
+        self.sureButton.enabled = NO;
+    }else{
+        self.sureButton.enabled = YES;
+    }
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 
 #pragma mark private method
@@ -66,20 +66,5 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:msg delegate:nil cancelButtonTitle:@"谢谢" otherButtonTitles:nil, nil];
     [alert show];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -9,7 +9,7 @@
 #import "HQParentViewController.h"
 #import "HQXMPPManager.h"
 
-@interface HQAddFriendViewController : HQParentViewController<UITextFieldDelegate>
+@interface HQAddFriendViewController : HQParentViewController
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
 @property (weak, nonatomic) IBOutlet UIButton *sureButton;
 
