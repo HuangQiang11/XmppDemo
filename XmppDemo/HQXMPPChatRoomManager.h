@@ -25,4 +25,6 @@ typedef void (^updateDataBlock)(id);
 - (void)inviteUser:(NSString *)jidStr toRoom:(XMPPRoom *)room withMessage:(NSString *)message;
 - (void)joinInChatRoom:(NSString *)roomJid withPassword:(NSString *)password;
 - (void)sendMessage:(NSString *)message inChatRoom:(NSString *)chatRoomJid;
+- (void)setup;
+- (void)deactivateMuc;
 @end

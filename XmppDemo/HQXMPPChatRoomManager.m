@@ -15,7 +15,6 @@ static HQXMPPChatRoomManager * manager;
     static dispatch_once_t oneTime;
     dispatch_once(&oneTime, ^{
         manager = [[HQXMPPChatRoomManager alloc] init];
-        [manager setup];
     });
     return manager;
 }
@@ -26,6 +25,12 @@ static HQXMPPChatRoomManager * manager;
     muc=[[XMPPMUC alloc] init];
     [muc activate:[HQXMPPManager shareXMPPManager].xmppStream];
     [muc addDelegate:self delegateQueue:dispatch_get_main_queue()];
+}
+
+- (void)deactivateMuc{
+    [muc deactivate];
+    [muc removeDelegate:self];
+    muc = nil;
 }
 
 -(NSXMLElement *)configNewRoom:(XMPPRoom *)room{

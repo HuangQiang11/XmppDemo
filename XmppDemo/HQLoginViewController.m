@@ -39,6 +39,7 @@
         switch (type) {
             case XMPPResultTypeLoginSuccess:
                 NSLog(@"登录成功");
+                [[HQXMPPChatRoomManager shareChatRoomManager] setup];
                 [self switchUi];
                 break;
             case XMPPResultTypeLoginFailure:

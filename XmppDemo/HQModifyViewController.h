@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Transaction Technologies Limited. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HQParentViewController.h"
 
-@interface HQModifyViewController : UIViewController
+@interface HQModifyViewController : HQParentViewController
 
 @end

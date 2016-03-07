@@ -77,6 +77,7 @@
 -(void)handleResultType:(XMPPResultType)type{
     dispatch_async(dispatch_get_main_queue(), ^{// 主线程刷新UI
         if (type == XMPPResultTypeLogoutSuccess) {
+            [[HQXMPPChatRoomManager shareChatRoomManager] deactivateMuc];
             [self switchUi];
         }
             });

@@ -7,7 +7,7 @@
 //
 
 #import "HQParentViewController.h"
-#import "HQXMPPManager.h"
+#import "HQXMPPChatRoomManager.h"
 @interface HQUserViewController :HQParentViewController
 
 @end
