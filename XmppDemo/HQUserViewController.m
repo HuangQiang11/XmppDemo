@@ -77,12 +77,15 @@
 -(void)handleResultType:(XMPPResultType)type{
     dispatch_async(dispatch_get_main_queue(), ^{// 主线程刷新UI
         if (type == XMPPResultTypeLogoutSuccess) {
-            self.tabBarController.selectedIndex = 0;
+            [self switchUi];
         }
             });
-    
 }
 
+- (void)switchUi{
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    [UIApplication sharedApplication].keyWindow.rootViewController = [storyboard instantiateInitialViewController];
+}
 
 
 #pragma mark 图片选择器的代理

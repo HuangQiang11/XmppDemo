@@ -6,12 +6,10 @@
 //  Copyright © 2015年 Transaction Technologies Limited. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "HQLoginView.h"
+#import "HQParentViewController.h"
 #import "HQRosterStorageTool.h"
-#import "HQSingleChatViewController.h"
 
-@interface HQFriendListViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface HQFriendListViewController : HQParentViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *friendTableView;
 @property (strong, nonatomic) HQRosterStorageTool * storageTool;
 

@@ -95,16 +95,6 @@ static HQXMPPChatRoomManager * manager;
                            password:nil];
 }
 
-- (void)queryRoomsInfo:(NSString *)roomJid{
-    XMPPIQ* iq=[XMPPIQ iqWithType:@"get"];
-    [iq addAttributeWithName:@"from" stringValue:[HQXMPPUserInfo shareXMPPUserInfo].jid];
-    [iq addAttributeWithName:@"id" stringValue:@"disco-1"];
-    [iq addAttributeWithName:@"to" stringValue:roomJid];
-    NSXMLElement* element_query=[NSXMLElement elementWithName:@"query" xmlns:@"http://jabber.org/protocol/disco#info"];
-    [iq addChild:element_query];
-    [[HQXMPPManager shareXMPPManager].xmppStream sendElement:iq];
-}
-
 - (void)inviteUser:(NSString *)jidStr toRoom:(XMPPRoom *)room withMessage:(NSString *)message{
     XMPPJID * jid = [XMPPJID jidWithString:jidStr];
     [room inviteUser:jid withMessage:message];
@@ -155,7 +145,7 @@ static HQXMPPChatRoomManager * manager;
 
 #pragma mark muc delegate
 - (void)xmppMUC:(XMPPMUC *)sender didDiscoverRooms:(NSArray *)rooms forServiceNamed:(NSString *)serviceName{
-    DLog(@"didDiscoverRooms");
+    NSLog(@"didDiscoverRooms");
     [self.roomList removeAllObjects];
     for (XMPPElement * element in rooms) {
         [self.roomList addObject:element.attributesAsDictionary[@"jid"]];
@@ -166,36 +156,36 @@ static HQXMPPChatRoomManager * manager;
 }
 
 - (void)xmppMUC:(XMPPMUC *)sender failedToDiscoverRoomsForServiceNamed:(NSString *)serviceName withError:(NSError *)error{
-    DLog(@"failedToDiscoverRoomsForServiceNamed");
+    NSLog(@"failedToDiscoverRoomsForServiceNamed");
 }
 
 - (void)xmppMUC:(XMPPMUC *)sender didDiscoverServices:(NSArray *)services{
-    DLog(@"didDiscoverServices");
+    NSLog(@"didDiscoverServices");
 }
 
 - (void)xmppMUCFailedToDiscoverServices:(XMPPMUC *)sender withError:(NSError *)error{
-    DLog(@"xmppMUCFailedToDiscoverServices");
+    NSLog(@"xmppMUCFailedToDiscoverServices");
 }
 
 - (void)xmppMUC:(XMPPMUC *)sender roomJID:(XMPPJID *)roomJID didReceiveInvitation:(XMPPMessage *)message{
-    DLog(@"didReceiveInvitation");
+    NSLog(@"didReceiveInvitation");
     NSXMLElement * xElement = [message elementForName:@"x"];
      [self joinInChatRoom:[[xElement attributeForName:@"jid"] stringValue] withPassword:nil];
 }
 
 - (void)xmppMUC:(XMPPMUC *)sender roomJID:(XMPPJID *)roomJID didReceiveInvitationDecline:(XMPPMessage *)message{
-    DLog(@"didReceiveInvitationDecline");
+    NSLog(@"didReceiveInvitationDecline");
 }
 
 #pragma mark xmppRoom delegate
 - (void)xmppRoomDidCreate:(XMPPRoom *)sender
 {
-    DLog(@"xmppRoomDidCreate");
+    NSLog(@"xmppRoomDidCreate");
 }
 
 - (void)xmppRoomDidJoin:(XMPPRoom *)sender
 {
-    DLog(@"xmppRoomDidJoin");
+    NSLog(@"xmppRoomDidJoin");
     [sender fetchBanList];
     [sender fetchMembersList];
     [sender fetchModeratorsList];
@@ -209,46 +199,46 @@ static HQXMPPChatRoomManager * manager;
 
 - (void)xmppRoom:(XMPPRoom *)sender didFetchConfigurationForm:(NSXMLElement *)configForm
 {
-    //    DLog(@"configForm:%@",configForm);
-    DLog(@"didFetchConfigurationForm");
+    //    NSLog(@"configForm:%@",configForm);
+    NSLog(@"didFetchConfigurationForm");
 }
 
 - (void)xmppRoom:(XMPPRoom *)sender didFetchBanList:(NSArray *)items
 {
-    DLog(@"didFetchBanList");
+    NSLog(@"didFetchBanList");
 }
 
 - (void)xmppRoom:(XMPPRoom *)sender didNotFetchBanList:(XMPPIQ *)iqError
 {
-    DLog(@"didNotFetchBanList");
+    NSLog(@"didNotFetchBanList");
 }
 
 - (void)xmppRoom:(XMPPRoom *)sender didFetchMembersList:(NSArray *)items
 {
-    DLog(@"didFetchMembersList");
+    NSLog(@"didFetchMembersList");
     for (NSString * str in items) {
-        DLog(@"items:%@",str);
+        NSLog(@"items:%@",str);
     }
 }
 
 - (void)xmppRoom:(XMPPRoom *)sender didNotFetchMembersList:(XMPPIQ *)iqError
 {
-    DLog(@"didNotFetchMembersList");
+    NSLog(@"didNotFetchMembersList");
 }
 
 - (void)xmppRoom:(XMPPRoom *)sender didFetchModeratorsList:(NSArray *)items
 {
-    DLog(@"didFetchModeratorsList");
+    NSLog(@"didFetchModeratorsList");
 }
 
 - (void)xmppRoom:(XMPPRoom *)sender didNotFetchModeratorsList:(XMPPIQ *)iqError
 {
-    DLog(@"didNotFetchModeratorsList");
+    NSLog(@"didNotFetchModeratorsList");
 }
 
 - (void)handleDidLeaveRoom:(XMPPRoom *)room
 {
-    DLog(@"handleDidLeaveRoom");
+    NSLog(@"handleDidLeaveRoom");
 }
 
 #pragma mark XMPPRoomStorage Protocol

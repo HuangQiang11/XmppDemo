@@ -8,9 +8,7 @@
 
 #import "HQFriendListViewController.h"
 #import "XMPPvCardTemp.h"
-@interface HQFriendListViewController (){
-    XMPPUserCoreDataStorageObject * userInfromation;
-}
+@interface HQFriendListViewController ()
 
 @end
 
@@ -19,21 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeLoginView:) name:MoveView object:nil];
     self.navigationItem.title = @"Friend List";
     UIBarButtonItem * rightButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonItem:)];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
+    [self initData];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if (![HQXMPPUserInfo shareXMPPUserInfo].loginStatus) {
-        UINib * nib = [UINib nibWithNibName:@"HQLoginView" bundle:nil];
-        HQLoginView * loginView = [[nib instantiateWithOwner:self options:nil] objectAtIndex:0];
-        loginView.frame = [UIScreen mainScreen].bounds;
-        [self.tabBarController.view addSubview:loginView];
-        loginView.tag = LoginViewTag;
-    }
+  
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -54,11 +46,6 @@
 }
 
 - (void)deleteFriendWithFriendName:(XMPPJID *)jid{
-    //remove friend and friend will receive message in didReceivePresence(XMPPStreamDelegate) method
-    /*
-     <presence xmlns="jabber:client" type="unsubscribed" from="g0000000008@gzserver-pc" to="user1@gzserver-pc"><delay xmlns="urn:xmpp:delay" stamp="2015-11-30T05:58:23.742Z" from="gzserver-pc">Offline Storage - gzserver-pc</delay></presence>
-     */
-    
     [[HQXMPPManager shareXMPPManager].roster removeUser:jid];
 }
 
@@ -74,12 +61,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identify];
     }
     XMPPUserCoreDataStorageObject * user = self.storageTool.fetchedResultsController.fetchedObjects[indexPath.row];
-    cell.textLabel.text = user.jidStr;
     
      XMPPvCardTemp *friendvCard =[[HQXMPPManager shareXMPPManager].vCard vCardTempForJID:user.jid shouldFetch:YES];
-     cell.detailTextLabel.text = friendvCard.nickname;
+    if (friendvCard.nickname) {
+        cell.textLabel.text = friendvCard.nickname;
+    }else{
+         cell.textLabel.text = user.jidStr;
+    }
      cell.imageView.image = [[UIImage alloc]initWithData:friendvCard.photo];
-    /*
+
     cell.accessoryView = nil;
     UILabel * statueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
     cell.accessoryView = statueLabel;
@@ -96,7 +86,6 @@
         default:
             break;
     }
-     */
     return cell;
 }
 
@@ -105,8 +94,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    userInfromation = self.storageTool.fetchedResultsController.fetchedObjects[indexPath.row];
-    [self performSegueWithIdentifier:@"HQSingleChatViewController" sender:self];
+    XMPPUserCoreDataStorageObject * user = self.storageTool.fetchedResultsController.fetchedObjects[indexPath.row];
+    [self performSegueWithIdentifier:@"HQSingleChatViewController" sender:user];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -123,36 +112,11 @@
     [self performSegueWithIdentifier:@"HQAddFriendViewController" sender:self];
 }
 
-- (void)removeLoginView:(NSNotification*) notification{
-    UIView * loginView = [self.tabBarController.view viewWithTag:LoginViewTag];
-    [UIView animateWithDuration:0.5 animations:^{
-        loginView.frame = CGRectMake( loginView.frame.origin.x,[UIScreen mainScreen].bounds.size.height, loginView.frame.size.width, loginView.frame.size.height);
-    } completion:^(BOOL finished) {
-        [loginView removeFromSuperview];
-    }];
-    [self initData];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqual:@"HQSingleChatViewController"]) {
-        HQSingleChatViewController * singleChatVC = segue.destinationViewController;
-        singleChatVC.userInfromation = userInfromation;
+        id singleChatVC = segue.destinationViewController;
+        [singleChatVC setValue:sender forKey:@"userInfromation"];
     }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

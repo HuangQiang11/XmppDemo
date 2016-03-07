@@ -6,11 +6,11 @@
 //  Copyright © 2015年 Transaction Technologies Limited. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HQParentViewController.h"
 #import "HQXMPPChatRoomManager.h"
 #import "HQGroupChatViewController.h"
 
-@interface HQGroupListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface HQGroupListViewController : HQParentViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *groupListTableView;
 
 @end

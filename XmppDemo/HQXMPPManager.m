@@ -44,7 +44,7 @@ static HQXMPPManager * manager;
 
 #pragma mark private method
 -(void)connectToHost{
-    DLog(@"开始连接到服务器");
+    NSLog(@"开始连接到服务器");
     if (!_xmppStream) {
         [self setupXMPPStream];
     }
@@ -69,18 +69,18 @@ static HQXMPPManager * manager;
     
     NSError *err = nil;
     if(![_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&err]){
-        DLog(@"%@",err);
+        NSLog(@"%@",err);
     }
     
 }
 
 -(void)sendPwdToHost{
-    DLog(@"再发送密码授权");
+    NSLog(@"再发送密码授权");
     NSError *err = nil;
     NSString *pwd = [HQXMPPUserInfo shareXMPPUserInfo].pwd;
     [_xmppStream authenticateWithPassword:pwd error:&err];
     if (err) {
-        DLog(@"%@",err);
+        NSLog(@"%@",err);
     }
 }
 
@@ -158,7 +158,7 @@ static HQXMPPManager * manager;
 
 //与主机连接成功
 -(void)xmppStreamDidConnect:(XMPPStream *)sender{
-    DLog(@"与主机连接成功");
+    NSLog(@"与主机连接成功");
     
     if (self.isRegisterOperation) {                                                     //注册操作，发送注册的密码
         NSString *pwd = [HQXMPPUserInfo shareXMPPUserInfo].registerPwd;
@@ -180,13 +180,13 @@ static HQXMPPManager * manager;
         _resultBlock(XMPPResultTypeLogoutSuccess);
     }
     
-    DLog(@"与主机断开连接 %@",error);
+    NSLog(@"与主机断开连接 %@",error);
     
 }
 
 //授权成功
 -(void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
-    DLog(@"授权成功");
+    NSLog(@"授权成功");
     [self sendOnlineToHost];                                                    //登陆成功发送在线消息
     [HQXMPPUserInfo shareXMPPUserInfo].loginStatus = YES;
     if(_resultBlock){
@@ -198,7 +198,7 @@ static HQXMPPManager * manager;
 
 //授权失败
 -(void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error{
-    DLog(@"授权失败 %@",error);
+    NSLog(@"授权失败 %@",error);
     if (_resultBlock) {
         _resultBlock(XMPPResultTypeLoginFailure);                               //执行登陆失败的操作
     }
@@ -206,7 +206,7 @@ static HQXMPPManager * manager;
 
 //注册成功
 -(void)xmppStreamDidRegister:(XMPPStream *)sender{
-    DLog(@"注册成功");
+    NSLog(@"注册成功");
     [HQXMPPUserInfo shareXMPPUserInfo].loginStatus = YES;
     if(_resultBlock){
         _resultBlock(XMPPResultTypeRegisterSuccess);                            //执行注册成功的操作
@@ -216,7 +216,7 @@ static HQXMPPManager * manager;
 
 //注册失败
 -(void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error{
-    DLog(@"注册失败 %@",error);
+    NSLog(@"注册失败 %@",error);
     if(_resultBlock){
         _resultBlock(XMPPResultTypeRegisterFailure);                            //执行注册失败的操作
     }
@@ -231,7 +231,7 @@ static HQXMPPManager * manager;
 //接收到好友消息
 -(void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
     
-    DLog(@"++++++++++xmppstream didreceivemessage+++++++++++++++++%@",message);
+    NSLog(@"++++++++++xmppstream didreceivemessage+++++++++++++++++%@",message);
 //    if([message isMessageWithBody]){
 //        if ([message.type isEqual:@"groupchat"]) {
 //            if ([HQXMPPUserInfo shareXMPPUserInfo].joinRoomName != nil && ![[HQXMPPUserInfo shareXMPPUserInfo].joinRoomName isEqual:@""] &&[ [message fromStr] hasPrefix:[HQXMPPUserInfo shareXMPPUserInfo].joinRoomName]) {
@@ -243,13 +243,13 @@ static HQXMPPManager * manager;
 
 //send message Fail
 - (void)xmppStream:(XMPPStream *)sender didFailToSendMessage:(XMPPMessage *)message error:(NSError *)error{
-    DLog(@"%@",error);
+    NSLog(@"%@",error);
 }
 
 //receive presence
 - (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence {
-    DLog(@"didReceivePresence");
-    DLog(@"%@",presence);
+    NSLog(@"didReceivePresence");
+    NSLog(@"%@",presence);
     //receive remove friend message
     if ([presence.type isEqual:@"unsubscribed"]) {
         [_roster removeUser:presence.from];
@@ -260,7 +260,7 @@ static HQXMPPManager * manager;
 - (void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence
 {
     //receive add friend message
-    DLog(@"didReceivePresenceSubscriptionRequest:%@",presence);
+    NSLog(@"didReceivePresenceSubscriptionRequest:%@",presence);
     NSString *presenceFromUser =[NSString stringWithFormat:@"%@", [presence fromStr]];
     XMPPJID *jid = [XMPPJID jidWithString:presenceFromUser];
     [_roster acceptPresenceSubscriptionRequestFrom:jid andAddToRoster:YES];

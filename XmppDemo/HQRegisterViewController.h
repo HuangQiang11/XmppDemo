@@ -1,0 +1,15 @@
+//
+//  HQRegisterViewController.h
+//  XmppDemo
+//
+//  Created by ttlgz-0022 on 16/3/7.
+//  Copyright © 2016年 Transaction Technologies Limited. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface HQRegisterViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@end

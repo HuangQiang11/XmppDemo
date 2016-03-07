@@ -6,7 +6,7 @@
 //  Copyright © 2015年 Transaction Technologies Limited. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HQParentViewController.h"
 #import "HQXMPPChatRoomManager.h"
 #import "NSString+HQUtility.h"
 #import "ChatModel.h"
@@ -14,7 +14,7 @@
 #import "ChatViewCell.h"
 #import "ChatViewForOtherCell.h"
 
-@interface HQGroupChatViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,NSFetchedResultsControllerDelegate>{
+@interface HQGroupChatViewController : HQParentViewController <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,NSFetchedResultsControllerDelegate>{
     NSFetchedResultsController *_resultsContr;
 }
 @property (weak, nonatomic) IBOutlet UITableView *chatMessageTableView;

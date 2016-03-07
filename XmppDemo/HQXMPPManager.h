@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "XMPPFramework.h"
-#import "DLog.h"
 #import "HQXMPPUserInfo.h"
 #import "config.h"
 

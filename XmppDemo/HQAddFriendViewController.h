@@ -6,10 +6,10 @@
 //  Copyright © 2015年 Transaction Technologies Limited. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HQParentViewController.h"
 #import "HQXMPPManager.h"
 
-@interface HQAddFriendViewController : UIViewController<UITextFieldDelegate>
+@interface HQAddFriendViewController : HQParentViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
 @property (weak, nonatomic) IBOutlet UIButton *sureButton;
 
