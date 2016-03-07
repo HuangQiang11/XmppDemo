@@ -20,19 +20,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardHidden:) name:UIKeyboardWillHideNotification object:nil];
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
     [self.blackBackgroudView addGestureRecognizer:tap];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    self.descriptionTextView.layer.cornerRadius = 10;
-    self.descriptionTextView.layer.masksToBounds = YES;
-    self.descriptionTextView.layer.borderColor = [UIColor redColor].CGColor;
-    self.descriptionTextView.layer.borderWidth = 1;
-    self.descriptionTextView.textColor = [UIColor grayColor];
-    self.descriptionTextView.text = @"Group Description";
-    self.descriptionTextView.delegate = self;
-    self.descriptionTextView.textColor = [UIColor lightGrayColor];
+    [self.descriptionTextView setHQTextColor:[UIColor blackColor]];
+    self.descriptionTextView.placeholderColor = [UIColor lightGrayColor];
+    self.descriptionTextView.placeholder = @"enter description";
     [self initData];
 }
 
@@ -75,31 +71,6 @@
     return 0.1;
 }
 
-#pragma mark UITextViewDelegate
--(void)textViewDidBeginEditing:(UITextView *)textView{
-    if (textView.textColor ==[UIColor lightGrayColor]) {
-        textView.text=@"";
-        textView.textColor=[UIColor blackColor];
-    }
-}
-
--(void)textViewDidEndEditing:(UITextView *)textView{
-    if ([textView.text isEqualToString:@""]) {
-        textView.text = @"Group Description";
-        textView.textColor=[UIColor lightGrayColor];
-    }
-    
-}
-
--(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString*)text
-{
-    if ([text isEqualToString:@"\n"]) {
-        [textView resignFirstResponder];
-        return NO;
-    }
-    return YES;
-}
-
 #pragma mark private method
 - (void)keyBoardShow:(NSNotification *)notification{
     //get keyBoard height
@@ -116,7 +87,7 @@
 }
 
 - (void)keyBoardHidden:(NSNotification *)notification{
-
+    [self cancelButtonAcion:nil];
 }
 
 - (void)initData{
