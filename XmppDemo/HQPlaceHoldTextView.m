@@ -9,7 +9,7 @@
 #import "HQPlaceHoldTextView.h"
 
 @implementation HQPlaceHoldTextView{
-    UIColor * origialColor;
+    UIColor * originalColor;
 }
 - (void)awakeFromNib{
     [self setLayout];
@@ -43,7 +43,7 @@
 }
 
 - (void)setHQTextColor:(UIColor *)color{
-    origialColor = color;
+    originalColor = color;
     self.textColor = color;
 }
 
@@ -51,7 +51,7 @@
 -(void)textViewDidBeginEditing:(UITextView *)textView{
     if (textView.textColor == self.placeholderColor) {
         textView.text = @"";
-        textView.textColor = origialColor;
+        textView.textColor = originalColor;
     }
 }
 
