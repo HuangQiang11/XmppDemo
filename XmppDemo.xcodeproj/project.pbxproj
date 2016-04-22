@@ -169,11 +169,11 @@
 		CF2DAD441C0AF6D40047E124 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2DAD421C0AF6D40047E124 /* SVProgressHUD.m */; };
 		CF2DAD481C0AFA250047E124 /* HQUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2DAD471C0AFA250047E124 /* HQUserViewController.m */; };
 		CF9CDA0E1C898C3A008A1535 /* HQModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9CDA0D1C898C3A008A1535 /* HQModifyViewController.m */; };
+		CF9CF54C1CCA2B05002B1DE2 /* PlaceholdTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9CF54B1CCA2B05002B1DE2 /* PlaceholdTextView.m */; };
 		CF9FD56C1C8D2533002FA916 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9FD56B1C8D2533002FA916 /* Login.storyboard */; };
 		CF9FD5701C8D25E3002FA916 /* HQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD56F1C8D25E3002FA916 /* HQLoginViewController.m */; };
 		CF9FD5731C8D25EE002FA916 /* HQRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD5721C8D25EE002FA916 /* HQRegisterViewController.m */; };
 		CF9FD5771C8D2710002FA916 /* HQParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD5761C8D2710002FA916 /* HQParentViewController.m */; };
-		CF9FD57B1C8D7AC7002FA916 /* HQPlaceHoldTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD57A1C8D7AC7002FA916 /* HQPlaceHoldTextView.m */; };
 		CFB673631C084DE0002451B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB673621C084DE0002451B7 /* main.m */; };
 		CFB673661C084DE0002451B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB673651C084DE0002451B7 /* AppDelegate.m */; };
 		CFB6736E1C084DE0002451B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFB6736D1C084DE0002451B7 /* Assets.xcassets */; };
@@ -514,6 +514,8 @@
 		CF2DAD471C0AFA250047E124 /* HQUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQUserViewController.m; sourceTree = "<group>"; };
 		CF9CDA0C1C898C3A008A1535 /* HQModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQModifyViewController.h; sourceTree = "<group>"; };
 		CF9CDA0D1C898C3A008A1535 /* HQModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQModifyViewController.m; sourceTree = "<group>"; };
+		CF9CF54A1CCA2AFA002B1DE2 /* PlaceholdTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceholdTextView.h; sourceTree = "<group>"; };
+		CF9CF54B1CCA2B05002B1DE2 /* PlaceholdTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholdTextView.m; sourceTree = "<group>"; };
 		CF9FD56B1C8D2533002FA916 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CF9FD56E1C8D25E3002FA916 /* HQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQLoginViewController.h; sourceTree = "<group>"; };
 		CF9FD56F1C8D25E3002FA916 /* HQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQLoginViewController.m; sourceTree = "<group>"; };
@@ -521,8 +523,6 @@
 		CF9FD5721C8D25EE002FA916 /* HQRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQRegisterViewController.m; sourceTree = "<group>"; };
 		CF9FD5751C8D2710002FA916 /* HQParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQParentViewController.h; sourceTree = "<group>"; };
 		CF9FD5761C8D2710002FA916 /* HQParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQParentViewController.m; sourceTree = "<group>"; };
-		CF9FD5791C8D7AC7002FA916 /* HQPlaceHoldTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQPlaceHoldTextView.h; sourceTree = "<group>"; };
-		CF9FD57A1C8D7AC7002FA916 /* HQPlaceHoldTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQPlaceHoldTextView.m; sourceTree = "<group>"; };
 		CFB6735E1C084DE0002451B7 /* XmppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XmppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFB673621C084DE0002451B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFB673641C084DE0002451B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1590,8 +1590,8 @@
 		CF9FD5781C8D7A67002FA916 /* PlaceholdTextView */ = {
 			isa = PBXGroup;
 			children = (
-				CF9FD5791C8D7AC7002FA916 /* HQPlaceHoldTextView.h */,
-				CF9FD57A1C8D7AC7002FA916 /* HQPlaceHoldTextView.m */,
+				CF9CF54A1CCA2AFA002B1DE2 /* PlaceholdTextView.h */,
+				CF9CF54B1CCA2B05002B1DE2 /* PlaceholdTextView.m */,
 			);
 			name = PlaceholdTextView;
 			sourceTree = "<group>";
@@ -1743,7 +1743,6 @@
 				CF2DAD261C0AECFA0047E124 /* DDLog.m in Sources */,
 				CF2DACC41C0AECFA0047E124 /* XMPPRosterCoreDataStorage.m in Sources */,
 				CF2DACAE1C0AECFA0047E124 /* NSNumber+XMPP.m in Sources */,
-				CF9FD57B1C8D7AC7002FA916 /* HQPlaceHoldTextView.m in Sources */,
 				CF2DACB61C0AECFA0047E124 /* XMPPParser.m in Sources */,
 				CF2DACE11C0AECFA0047E124 /* XMPPvCardCoreDataStorage.m in Sources */,
 				CF2DAD281C0AECFA0047E124 /* DDContextFilterLogFormatter.m in Sources */,
@@ -1894,6 +1893,7 @@
 				CF2DAD2A1C0AECFA0047E124 /* DDMultiFormatter.m in Sources */,
 				CF2DAD031C0AECFA0047E124 /* XMPPMessageArchiving.m in Sources */,
 				CF2DACF61C0AECFA0047E124 /* XMPPMessage+XEP_0085.m in Sources */,
+				CF9CF54C1CCA2B05002B1DE2 /* PlaceholdTextView.m in Sources */,
 				CF2DAD1B1C0AECFA0047E124 /* DDList.m in Sources */,
 				CF2DAB181C0AD1760047E124 /* HQGroupListViewController.m in Sources */,
 				CF2DACDA1C0AECFA0047E124 /* XMPPRoomMessageMemoryStorageObject.m in Sources */,

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4B8DB316E3FD4084F21B60399E2E48DCF8361CE1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4B8DB316E3FD4084F21B60399E2E48DCF8361CE1" : 0,
+    "FC5DF2EA6F61C7F05685BD3790F53D1E1A71C4B6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3027ECF5-DC56-43BE-821C-EC76C262B2ED",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4B8DB316E3FD4084F21B60399E2E48DCF8361CE1" : "XmppDemo\/",
+    "FC5DF2EA6F61C7F05685BD3790F53D1E1A71C4B6" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "XmppDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "XmppDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/HuangQiang11\/XmppDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4B8DB316E3FD4084F21B60399E2E48DCF8361CE1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/HuangQiang11\/TestProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FC5DF2EA6F61C7F05685BD3790F53D1E1A71C4B6"
+    }
+  ]
+}

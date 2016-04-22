@@ -26,9 +26,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    [self.descriptionTextView setHQTextColor:[UIColor blackColor]];
-    self.descriptionTextView.placeholderColor = [UIColor lightGrayColor];
-    self.descriptionTextView.placeholder = @"enter description";
+    self.descriptionTextView.placeholdColor = [UIColor lightGrayColor];
+    self.descriptionTextView.placehold = @"enter description";
     [self initData];
 }
 
