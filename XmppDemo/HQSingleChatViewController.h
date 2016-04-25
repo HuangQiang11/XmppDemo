@@ -11,9 +11,7 @@
 #import "ChatViewCell.h"
 #import "HQXMPPManager.h"
 
-@interface HQSingleChatViewController : HQParentViewController<UITableViewDataSource,UITableViewDelegate,NSFetchedResultsControllerDelegate>{
-    NSFetchedResultsController *_resultsContr;
-}
+@interface HQSingleChatViewController : HQParentViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *chatMessageTableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;

@@ -14,14 +14,11 @@
 #import "ChatViewCell.h"
 #import "ChatViewForOtherCell.h"
 
-@interface HQGroupChatViewController : HQParentViewController <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,NSFetchedResultsControllerDelegate>{
-    NSFetchedResultsController *_resultsContr;
-}
+@interface HQGroupChatViewController : HQParentViewController <UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *chatMessageTableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;
 @property (weak, nonatomic) IBOutlet UIButton *sendMessageButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstraint;
 @property (strong, nonatomic) NSString * roomName;
-@property (strong, nonatomic) NSMutableArray * dataArray;
 @end

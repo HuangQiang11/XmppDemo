@@ -170,6 +170,7 @@
 		CF2DAD481C0AFA250047E124 /* HQUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2DAD471C0AFA250047E124 /* HQUserViewController.m */; };
 		CF9CDA0E1C898C3A008A1535 /* HQModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9CDA0D1C898C3A008A1535 /* HQModifyViewController.m */; };
 		CF9CF54C1CCA2B05002B1DE2 /* PlaceholdTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9CF54B1CCA2B05002B1DE2 /* PlaceholdTextView.m */; };
+		CF9CF54F1CCA2D95002B1DE2 /* MessageStorageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9CF54E1CCA2D95002B1DE2 /* MessageStorageTool.m */; };
 		CF9FD56C1C8D2533002FA916 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9FD56B1C8D2533002FA916 /* Login.storyboard */; };
 		CF9FD5701C8D25E3002FA916 /* HQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD56F1C8D25E3002FA916 /* HQLoginViewController.m */; };
 		CF9FD5731C8D25EE002FA916 /* HQRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9FD5721C8D25EE002FA916 /* HQRegisterViewController.m */; };
@@ -516,6 +517,8 @@
 		CF9CDA0D1C898C3A008A1535 /* HQModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQModifyViewController.m; sourceTree = "<group>"; };
 		CF9CF54A1CCA2AFA002B1DE2 /* PlaceholdTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceholdTextView.h; sourceTree = "<group>"; };
 		CF9CF54B1CCA2B05002B1DE2 /* PlaceholdTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholdTextView.m; sourceTree = "<group>"; };
+		CF9CF54D1CCA2D95002B1DE2 /* MessageStorageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageStorageTool.h; sourceTree = "<group>"; };
+		CF9CF54E1CCA2D95002B1DE2 /* MessageStorageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageStorageTool.m; sourceTree = "<group>"; };
 		CF9FD56B1C8D2533002FA916 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CF9FD56E1C8D25E3002FA916 /* HQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQLoginViewController.h; sourceTree = "<group>"; };
 		CF9FD56F1C8D25E3002FA916 /* HQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQLoginViewController.m; sourceTree = "<group>"; };
@@ -1521,6 +1524,8 @@
 				CF12BE7A1C0BF7B90084DD0E /* HQRosterStorageTool.m */,
 				CF12BE8A1C0C345B0084DD0E /* HQXMPPChatRoomManager.h */,
 				CF12BE8B1C0C345B0084DD0E /* HQXMPPChatRoomManager.m */,
+				CF9CF54D1CCA2D95002B1DE2 /* MessageStorageTool.h */,
+				CF9CF54E1CCA2D95002B1DE2 /* MessageStorageTool.m */,
 			);
 			name = XMPPTool;
 			sourceTree = "<group>";
@@ -1770,6 +1775,7 @@
 				CF2DACE81C0AECFA0047E124 /* XMPPvCardTempEmail.m in Sources */,
 				CF2DACDC1C0AECFA0047E124 /* XMPPMessage+XEP0045.m in Sources */,
 				CF9FD5731C8D25EE002FA916 /* HQRegisterViewController.m in Sources */,
+				CF9CF54F1CCA2D95002B1DE2 /* MessageStorageTool.m in Sources */,
 				CF2DACEC1C0AECFA0047E124 /* NSXMLElement+XEP_0059.m in Sources */,
 				CF2DAD201C0AECFA0047E124 /* XMPPStringPrep.m in Sources */,
 				CF2DACB41C0AECFA0047E124 /* XMPPMessage.m in Sources */,
