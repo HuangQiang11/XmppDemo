@@ -7,8 +7,8 @@
 //
 
 #import "HQParentViewController.h"
-#import "HQRosterStorageTool.h"
 
+@class HQRosterStorageTool;
 @interface HQFriendListViewController : HQParentViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *friendTableView;
 @property (strong, nonatomic) HQRosterStorageTool * storageTool;

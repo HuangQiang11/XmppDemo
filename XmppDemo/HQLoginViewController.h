@@ -7,10 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HQRegisterViewController.h"
-#import "HQXMPPManager.h"
-#import "SVProgressHUD.h"
-#import "HQXMPPChatRoomManager.h"
 
 @interface HQLoginViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;

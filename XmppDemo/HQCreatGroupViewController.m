@@ -7,6 +7,9 @@
 //
 
 #import "HQCreatGroupViewController.h"
+#import "HQRosterStorageTool.h"
+#import "HQXMPPChatRoomManager.h"
+#import "PlaceholdTextView.h"
 
 @interface HQCreatGroupViewController (){
     NSMutableArray * selectArr;

@@ -8,6 +8,9 @@
 
 #import "HQSingleChatViewController.h"
 #import "MessageStorageTool.h"
+#import "ChatViewForOtherCell.h"
+#import "ChatViewCell.h"
+#import "HQXMPPManager.h"
 @interface HQSingleChatViewController ()
 @property (strong, nonatomic) MessageStorageTool * messageTool;
 @end

@@ -7,8 +7,6 @@
 //
 
 #import "HQParentViewController.h"
-#import "HQXMPPChatRoomManager.h"
-#import "HQGroupChatViewController.h"
 
 @interface HQGroupListViewController : HQParentViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *groupListTableView;

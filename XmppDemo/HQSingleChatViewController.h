@@ -7,10 +7,8 @@
 //
 
 #import "HQParentViewController.h"
-#import "ChatViewForOtherCell.h"
-#import "ChatViewCell.h"
-#import "HQXMPPManager.h"
 
+@class XMPPUserCoreDataStorageObject;
 @interface HQSingleChatViewController : HQParentViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *chatMessageTableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;

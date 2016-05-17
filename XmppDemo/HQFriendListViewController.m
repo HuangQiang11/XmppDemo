@@ -8,6 +8,7 @@
 
 #import "HQFriendListViewController.h"
 #import "XMPPvCardTemp.h"
+#import "HQRosterStorageTool.h"
 @interface HQFriendListViewController ()
 
 @end

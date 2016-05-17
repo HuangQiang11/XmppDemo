@@ -7,7 +7,7 @@
 //
 
 #import "HQAddFriendViewController.h"
-
+#import "HQXMPPManager.h"
 @interface HQAddFriendViewController ()
 
 @end

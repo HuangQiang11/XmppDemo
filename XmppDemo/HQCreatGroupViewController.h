@@ -7,10 +7,9 @@
 //
 
 #import "HQParentViewController.h"
-#import "HQRosterStorageTool.h"
-#import "HQXMPPChatRoomManager.h"
-#import "PlaceholdTextView.h"
 
+@class PlaceholdTextView;
+@class HQRosterStorageTool;
 @interface HQCreatGroupViewController : HQParentViewController<UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstraint;
 @property (weak, nonatomic) IBOutlet UITableView *friendListTableView;

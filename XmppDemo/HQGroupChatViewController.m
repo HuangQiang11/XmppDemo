@@ -8,6 +8,12 @@
 
 #import "HQGroupChatViewController.h"
 #import "MessageStorageTool.h"
+#import "HQXMPPChatRoomManager.h"
+#import "NSString+HQUtility.h"
+#import "ChatModel.h"
+#import "NSMutableArray+HQUtility.h"
+#import "ChatViewCell.h"
+#import "ChatViewForOtherCell.h"
 @interface HQGroupChatViewController ()
 @property (strong, nonatomic) MessageStorageTool * messageTool;
 @end

@@ -8,6 +8,7 @@
 
 #import "HQUserViewController.h"
 #import "XMPPvCardTemp.h"
+#import "HQXMPPChatRoomManager.h"
 @interface HQUserViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>{
 
     __weak IBOutlet UIButton *nickNameButton;

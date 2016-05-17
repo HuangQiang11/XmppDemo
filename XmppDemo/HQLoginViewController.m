@@ -7,7 +7,10 @@
 //
 
 #import "HQLoginViewController.h"
-
+#import "HQRegisterViewController.h"
+#import "HQXMPPManager.h"
+#import "SVProgressHUD.h"
+#import "HQXMPPChatRoomManager.h"
 @interface HQLoginViewController ()
 
 @end
